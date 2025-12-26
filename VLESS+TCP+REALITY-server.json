@@ -31,8 +31,8 @@
           "privateKey": "",                              //  generate by `xray x25519`
           "shortIds": [
             "",
-            "9b3fa9488a6af061",                          //  generate by `openssl rand -hex 8`
-            "25beb3b9d5e05262"
+            "9b3faaf061",                          //  generate by `openssl rand -hex 8`
+            "25d5e05262"
           ]
         }
       }
