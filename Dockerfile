@@ -17,8 +17,6 @@ RUN set -eux; \
     install -m 755 /tmp/xray /usr/bin/xray; \
     rm -rf /tmp/*
 
-COPY server.json /etc/xray/config.json
-
 VOLUME ["/etc/xray", "/var/log/xray"]
 
 ENV TZ=Asia/Shanghai
