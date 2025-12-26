@@ -1,9 +1,17 @@
 FROM alpine:latest
 
-WORKDIR /root
+ARG VERSION=v24.12.18
+ARG FILENAME=Xray-linux-64.zip
+
+RUN set -ex \
+    apk add --no-cache bash tzdata ca-certificates openssl curl unzip
+    && curl -L -o /tmp/xray.zip https://github.com/XTLS/Xray-core/releases/download/${VERSION}/${FILENAME} \
+    && unzip /tmp/${FILENAME} \
+    && mv /tmp/xray /usr/bin/xray
+    && rm -rf /tmp/*
+
 COPY server.json /etc/xray/config.json
-COPY xray /usr/bin/xray
-RUN apk add --no-cache bash tzdata ca-certificates openssl 
+
 VOLUME /etc/xray
 VOLUME /var/log/xray
 
