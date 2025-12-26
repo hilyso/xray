@@ -1,0 +1,47 @@
+
+// minimal configuration for vless+reality+tcp
+
+{
+  "log": {
+    "loglevel": "debug"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "",                                   //  generate by `xray uuid`
+            "flow": "xtls-rprx-vision"                  
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",                               
+        "security": "reality",                          
+        "realitySettings": {
+          "show": false,
+          "dest": "music.apple.com:443",                 
+          "xver": 0,
+          "serverNames": [
+            "music.apple.com"                            
+          ],   
+          "privateKey": "",                              //  generate by `xray x25519`
+          "shortIds": [
+            "",
+            "9b3fa9488a6af061",                          //  generate by `openssl rand -hex 8`
+            "25beb3b9d5e05262"
+          ]
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    }
+  ]
+}
