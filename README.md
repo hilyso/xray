@@ -4,7 +4,7 @@
 
 ### Build image
 
-    ``` shell
+    ```bash
     docker build \
     --build-arg VERSION=$VERSION \
     -t xray:$VERSION \
@@ -12,7 +12,7 @@
 
 ### Start container
 
-    ``` shell
+    ```bash
     docker run -d \
     --name $CONTAINER_NAME \
     -p $HOST_PORT:$CONTAINER_PORT \
