@@ -9,7 +9,6 @@
     --build-arg VERSION=$VERSION \
     -t xray:$VERSION \
     .
-    ```
 
 ### Start container
 
@@ -19,5 +18,4 @@
     -p $HOST_PORT:$CONTAINER_PORT \
     -v $HOST_CONFIG_FILE:/etc/xray/config.json \
     xray:$VERSION
-    ```
 
