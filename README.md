@@ -1,10 +1,10 @@
 ## Usage
 
-  - `git clone https://github.com/hilyso/xray.git`  
+   `git clone https://github.com/hilyso/xray.git`  
 
 ### Build image
 
-  - ``` shell
+    ``` shell
     docker build \
     --build-arg VERSION=$VERSION \
     -t xray:$VERSION \
@@ -13,7 +13,7 @@
 
 ### Start container
 
-  - ``` shell
+    ``` shell
     docker run -d \
     --name $CONTAINER_NAME \
     -p $HOST_PORT:$CONTAINER_PORT \
