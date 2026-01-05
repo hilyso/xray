@@ -1,14 +1,23 @@
-## 快速部署
+## Usage
 
-  - 不区分服务端还是客户端, 以什么方式运行取决于配置文件  
+  - `git clone https://github.com/hilyso/xray.git`  
 
-## 容器构建
+### Build image
 
-  - `docker built -t xray:v24.12.18 .`  
+  - ``` shell
+    docker build \
+    --build-arg VERSION=$VERSION \
+    -t xray:$VERSION \
+    .
+    ```
 
+### Start container
 
-## 使用方法
-
-  `docker run -d --name xray-server -p 443:443 -v /path/to/your/server.json:/etc/xray/config.json xray:v24.12.18`  
-  `docker run -d --name xray-client -p 443:443 -v /path/to/your/client.json:/etc/xray/config.json xray:v24.12.18`  
+  - ``` shell
+    docker run -d \
+    --name $CONTAINER_NAME \
+    -p $HOST_PORT:$CONTAINER_PORT \
+    -v $HOST_CONFIG_FILE:/etc/xray/config.json \
+    xray:$VERSION
+    ```
 
