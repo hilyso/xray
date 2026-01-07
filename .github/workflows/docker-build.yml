@@ -3,7 +3,7 @@ name: Build Docker Image (GHCR)
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'Dockerfile'
       - '.github/workflows/docker-build.yml'
