@@ -20,7 +20,7 @@ RUN set -eux; \
     curl -fL -o /tmp/${FILENAME} \
         https://github.com/XTLS/Xray-core/releases/download/${VERSION}/${FILENAME}; \
     unzip /tmp/${FILENAME} -d /tmp; \
-    install -m 755 /tmp/xray /usr/bin/xray; \
+    install -m 755 /tmp/xray /usr/bin/xray;
 
 VOLUME /etc/xray
 VOLUME /var/log/xray
