@@ -6,7 +6,7 @@
 
 FROM alpine:latest
 
-ARG VERSION=v25.12.8
+ARG VERSION=v26.1.13
 ARG FILENAME=Xray-linux-64.zip
 
 RUN set -eux; \
